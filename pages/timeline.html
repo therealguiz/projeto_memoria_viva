@@ -3,36 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memória Viva</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
+    <title>Memória Viva - Linha do Tempo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
-<body>
 
+<body class="page-timeline">
     <nav class="navegador">
         <div class="navegador-conteudo">
-            <a href="/pages/homepage.html"><h1 class="logo">Memória Viva</h1></a>
-        
-        <div class="links-nav">
-            <a href="/pages/inicio.html">Início</a>
-            <a href="/pages/pessoas.html">Pessoas</a>
-            <a href="/pages/timeline.html">Linha do Tempo</a>
-        </div>
-        
-        <button class="botao-primario">
-            + Adicionar Memória
-        </button>
+            <a href="../homepage.html"><h1 class="logo">Memória Viva</h1></a>
+            <div class="links-nav">
+                <a href="inicio.html">Sobre</a>
+                <a href="pessoas.html">Pessoas</a>
+                <a href="timeline.html" class="ativo">Linha do Tempo</a>
+            </div>
+            <button class="botao-primario">
+                + Adicionar Memória
+            </button>
         </div>
     </nav>
 
-    <h1>
-      <p>TIMELINE</p>
+    <main class="pagina-padrao">
+        <div style="text-align: center; margin: 60px 0 100px;">
+            <h1 class="titulo-trilho" style="font-size: 48px; margin-bottom: 15px;">Nossa Jornada</h1>
+            <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; color: #888;">
+                "Raízes profundas não temem o vento."
+            </p>
+        </div>
 
-      <p>note: ainda não sei como a gente vai expor a timeline ainda, vou ver melhor amanhã, talvez um layout parecendo uma arvore, deve ter na internet alguma coisa parecida</p>
-    </h1>
+        <div class="container-timeline">
+            
+            <div class="linha-vertical"></div>
+
+            <div class="evento-timeline">
+                <div class="evento-ano">9999</div>
+                
+                <div class="evento-conteudo tipo-foto">
+                    <img src="https://placehold.co/400x300/EAE8E4/999?text=dataimp" alt="Chegada">
+                    <div class="legenda-polaroid">titulo bonito</div>
+                    <p class="card-descricao" style="margin-top: 10px; text-align: center;">
+                        adicionar descrição bonitinha.adicionar descrição bonitinha.adicionar descrição bonitinha.adicionar descrição bonitinha.
+                    </p>
+                </div>
+            </div>
+
+            <div class="evento-timeline">
+                <div class="evento-ano">9999</div>
+                
+                <div class="evento-conteudo tipo-historia">
+                    <h3>titulo bonitinho</h3>
+                    <p>
+                        adicionar descrição bonitinha.adicionar descrição bonitinha.adicionar descrição bonitinha.adicionar descrição bonitinha.adicionar descrição bonitinha.
+                    </p>
+                </div>
+            </div>
+
+            <div class="evento-timeline">
+                <div class="evento-ano">9999</div>
+                
+                <div class="evento-conteudo tipo-foto">
+                    <img src="https://placehold.co/400x250/B87A5E/FBF8F3?text=dataimp" alt="Casamento">
+                    <div class="legenda-polaroid">titulo bonito</div>
+                    <p class="card-descricao" style="margin-top: 10px; text-align: center;">
+                        adicionar descrição bonitinha.adicionar descrição bonitinha.adicionar descrição bonitinha.adicionar descrição bonitinha.
+                    </p>
+                </div>
+            </div>
+
+            <div class="evento-timeline">
+                <div class="evento-ano">9999</div>
+                
+                <div class="evento-conteudo tipo-receita">
+                    <h3>titulo bonitinho</h3>
+                    <div style="text-align: center; margin-bottom: 10px; font-size: 30px;"></div>
+                    <p>
+                	adicionar descrição bonitinha.adicionar descrição bonitinha.adicionar descrição bonitinha.adicionar descrição bonitinha.
+                        <br><br>
+                        <i>adicionar descrição bonitinha.adicionar descrição bonitinha.adicionar descrição bonitinha.</i>
+                    </p>
+                </div>
+            </div>
+
+            <div class="evento-timeline">
+                <div class="evento-ano">2025</div>
+                
+                <div class="evento-conteudo tipo-foto">
+                    <img src="https://placehold.co/400x250/3D3A3A/FFF?text=Memória+Viva" alt="Projeto">
+                    <div class="legenda-polaroid">Projeto Memória Viva</div>
+                    <p class="card-descricao" style="margin-top: 10px; text-align: center;">
+                        Iniciamos a gravação dos documentários para eternizar nossas histórias.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div style="height: 100px;"></div>
+
+    </main>
+
+    <script>
+        const observador = new IntersectionObserver((entradas) => {
+            entradas.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    entrada.target.classList.add('visivel');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.evento-timeline').forEach((evento) => {
+            observador.observe(evento);
+        });
+    </script>
+
 </body>
 </html>
