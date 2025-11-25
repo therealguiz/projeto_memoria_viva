@@ -194,3 +194,65 @@ body.page-timeline { --cor-fundo: #F2F0EB; }
 
 .tipo-receita h3 { text-align: center; text-transform: uppercase; letter-spacing: 2px; font-size: 16px; color: #888; border-bottom: 2px solid #eee; padding-bottom: 10px; }
 .tipo-receita p { font-family: var(--fonte-corpo); font-size: 14px; color: #555; }
+
+.container-detalhe {
+    max-width: 1100px; margin: 40px auto; padding: 0 20px;
+    display: grid; grid-template-columns: 2fr 1fr;
+    gap: 40px; align-items: start;
+}
+
+.memoria-principal {
+    background: #fff; padding: 40px; border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.memoria-cabecalho { margin-bottom: 20px; border-bottom: 1px solid var(--cor-cinza); padding-bottom: 20px; }
+.titulo-memoria { font-family: var(--fonte-titulo); font-size: 32px; margin: 0 0 15px 0; color: var(--cor-texto); }
+
+.autor-info { display: flex; align-items: center; gap: 15px; }
+.foto-autor-mini {
+    width: 50px; height: 50px; border-radius: 50%; background-color: var(--cor-cinza); background-size: cover; background-position: center;
+}
+.nome-autor { font-weight: bold; color: var(--cor-primaria); font-size: 16px; display: block; }
+.data-post { font-size: 14px; color: #999; }
+
+.memoria-midia { width: 100%; margin-bottom: 30px; }
+.memoria-midia img { width: 100%; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+.memoria-texto { font-family: 'Georgia', serif; font-size: 18px; line-height: 1.8; color: #444; margin-bottom: 30px; }
+
+.fio-historia { margin-top: 50px; padding-top: 30px; border-top: 2px dashed var(--cor-cinza); position: relative; }
+.fio-titulo { font-family: var(--fonte-titulo); font-size: 22px; margin-bottom: 25px; color: #666; display: flex; align-items: center; gap: 10px; }
+.fio-titulo::before { content: '🧶'; font-size: 24px; }
+
+.item-fio {
+    background: var(--cor-fundo); padding: 25px; border-radius: 8px; margin-bottom: 20px;
+    border-left: 4px solid var(--cor-primaria); position: relative;
+}
+.item-fio h4 { margin: 0 0 10px 0; color: var(--cor-primaria); font-size: 16px; display: flex; justify-content: space-between; }
+.item-fio p { margin: 0; color: #555; font-size: 15px; line-height: 1.6; }
+.badge-fio { font-size: 12px; background: rgba(0,0,0,0.05); padding: 2px 8px; border-radius: 10px; color: #777; font-weight: normal; }
+
+.barra-lateral {
+    background: #fff; padding: 30px; border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: sticky; top: 100px;
+}
+.titulo-lateral {
+    font-family: var(--fonte-titulo); font-size: 22px; margin: 0 0 20px 0;
+    border-bottom: 1px solid var(--cor-cinza); padding-bottom: 15px;
+}
+.lista-comentarios { display: flex; flex-direction: column; gap: 20px; }
+.comentario { display: flex; gap: 12px; }
+.comentario-avatar {
+    width: 35px; height: 35px; border-radius: 50%; background-color: var(--cor-cinza); flex-shrink: 0;
+    background-size: cover; background-position: center;
+}
+.comentario-conteudo {
+    background: var(--cor-fundo); padding: 12px 15px; border-radius: 12px; border-top-left-radius: 2px;
+    font-size: 14px; line-height: 1.4; width: 100%;
+}
+.comentario-autor { font-weight: bold; font-size: 13px; color: var(--cor-primaria); margin-bottom: 4px; display: block; }
+
+@media (max-width: 768px) {
+    .container-detalhe { grid-template-columns: 1fr; }
+    .barra-lateral { position: static; margin-top: 40px; }
+}
