@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhe da Memória - Memória Viva</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <nav class="navegador">
+        <div class="navegador-conteudo">
+            <a href="../index.html"><h1 class="logo">Memória Viva</h1></a>
+            <div class="links-nav">
+                <a href="inicio.html">Sobre</a>
+                <a href="pessoas.html">Pessoas</a>
+                <a href="timeline.html">Linha do Tempo</a>
+            </div>
+            <button class="botao-primario">
+                + Adicionar Memória
+            </button>
+        </div>
+    </nav>
+
+    <main class="pagina-padrao">
+        
+        <div style="margin-top: 30px; padding-left: 20px;">
+            <a href="../homepage.html" style="color: #888; font-size: 14px;">← Voltar para o feed</a>
+        </div>
+
+        <div class="container-detalhe">
+            
+            <section class="memoria-principal">
+                
+                <div class="memoria-cabecalho">
+                    <h1 class="titulo-memoria">Flamengo 5 x 0 Fortaleza</h1>
+                    
+                    <div class="autor-info">
+                        <div class="foto-autor-mini" style="background-image: url('/assets/foto-perfil-autor.jpg')"></div>
+                        <div class="meta-info">
+                            <span class="nome-autor">Postado por Guilherme</span>
+                            <span class="data-post">Adicionado em 25/11/2025 • Flamengo x Fortaleza</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memoria-midia">
+                    <img src="/assets/maraca-bonde.jpg" alt="foto da memoria">
+                    <p style="font-family: 'Dancing Script', cursive; text-align: center; color: #777; margin-top: 10px; font-size: 20px;">
+                        Invictos no Maraca
+                    </p>
+                </div>
+
+                <div class="memoria-texto">
+                    <p>Tropa garantindo os 3 pontos, seguimos invictos no Maraca #SRN</p>
+                    <p>@Mateus Mendes / @Bernardo / @Guilherme / @Julio / @Douglas Castro</p>
+                </div>
+
+                <div class="fio-historia">
+                    <h3 class="fio-titulo">Fio da História</h3>
+                    <p style="color: #888; font-size: 14px; margin-bottom: 20px;">Outros familiares adicionaram detalhes a esta memória:</p>
+
+                    <div class="item-fio">
+                        <h4>
+                            <span>Bernardo:</span>
+                            <span class="badge-fio">outro ponto de vista</span>
+                        </h4>
+                        <img src="/assets/maraca-irmao.jpg" alt="foto da memoria">
+                        <p>LA jogou pra caralho, nem consegui ver o gol do Arrasca mas falaram que foi golaço.</p>
+                    </div>
+
+                    <div class="item-fio">
+                        <h4>
+                            <span>Douglas:</span>
+                            <span class="badge-fio">memória bonita</span>
+                        </h4>
+                        <img src="/assets/foto-bandeirao.jpg" alt="foto da memoria">
+                        <p>Primeira vez no Maraca, festa inesquecivel. SEREMOS!!!</p>
+                    </div>
+
+                    <button style="background: transparent; border: 2px dashed #ccc; color: #888; width: 100%; padding: 15px; border-radius: 8px; cursor: pointer;">
+                        + Adicionar sua versão da história
+                    </button>
+                </div>
+
+            </section>
+
+            <aside class="barra-lateral">
+                <h3 class="titulo-lateral">Comentários (2)</h3>
+                
+                <div class="lista-comentarios">
+                    
+                    <div class="comentario">
+                        <div class="comentario-avatar" style="background-image: url('/assets/foto-perfil-pedro.PNG')"></div>
+                        <div class="comentario-conteudo">
+                            <span class="comentario-autor">Pedro</span>
+                            Impossivel que eu perdi esse jogão...
+                        </div>
+                    </div>
+
+                    <div class="comentario">
+                        <div class="comentario-avatar" style="background-image: url('/assets/foto-perfil-pajé.PNG')"></div>
+                        <div class="comentario-conteudo">
+                            <span class="comentario-autor">Ricardo Pajé</span>
+                            #RumoAoEnea #RumoAoTetra #NinguemMorreNosDevendo #SRN
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <textarea placeholder="Escreva um comentário" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; resize: vertical; font-family: var(--fonte-corpo);"></textarea>
+                        <button style="background-color: var(--cor-primaria); color: white; border: none; padding: 8px 15px; border-radius: 4px; margin-top: 5px; cursor: pointer; font-size: 12px;">Enviar</button>
+                    </div>
+
+                </div>
+            </aside>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
