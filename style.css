@@ -215,8 +215,37 @@ body.page-timeline { --cor-fundo: #F2F0EB; }
 .nome-autor { font-weight: bold; color: var(--cor-primaria); font-size: 16px; display: block; }
 .data-post { font-size: 14px; color: #999; }
 
-.memoria-midia { width: 100%; margin-bottom: 30px; }
-.memoria-midia img { width: 100%; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.memoria-midia { 
+    width: 100%; 
+    margin-bottom: 30px; 
+    text-align: center;
+    background-color: #FAFAFA;
+    border-radius: 4px;
+    padding: 10px; 
+}
+.memoria-midia img { 
+    max-width: 100%; 
+    max-height: 500px;
+    width: auto;
+    display: inline-block;
+    border-radius: 4px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+}
+
+.memoria-texto { font-family: 'Georgia', serif; font-size: 18px; line-height: 1.8; color: #444; margin-bottom: 30px; }
+.fio-historia { margin-top: 50px; padding-top: 30px; border-top: 2px dashed var(--cor-cinza); position: relative; }
+.fio-titulo { font-family: var(--fonte-titulo); font-size: 22px; margin-bottom: 25px; color: #666; display: flex; align-items: center; gap: 10px; }
+.fio-titulo::before { content: '🧶'; font-size: 24px; }
+.item-fio { background: var(--cor-fundo); padding: 25px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--cor-primaria); }
+
+.item-fio img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 15px;
+    display: block;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
 .memoria-texto { font-family: 'Georgia', serif; font-size: 18px; line-height: 1.8; color: #444; margin-bottom: 30px; }
 
