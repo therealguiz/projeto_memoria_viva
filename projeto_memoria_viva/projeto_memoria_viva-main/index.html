@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memória Viva - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navegador">
+        <div class="navegador-conteudo">
+            <a href="index.html"><h1 class="logo">Memória Viva</h1></a>
+            <div class="links-nav">
+                <a href="pages/inicio.html">Sobre</a>
+                <a href="index.html" class="ativo">Memórias</a>
+                <a href="pages/pessoas.html">Pessoas</a>
+                <a href="pages/timeline.html">Linha do Tempo</a>
+            </div>
+            <button class="botao-primario" onclick="abrirModal()">
+                + Adicionar Memória
+            </button>
+        </div>
+    </nav>
+
+    <main class="pagina-padrao">
+        <section class="trilho-memorias">
+            <h2 class="titulo-trilho">A Experiência da Família</h2>
+            <div class="carrossel esconder-scroll">
+                <a href="pages/memoria.html" class="card-memoria" style="width: 400px;">
+                    <div class="card-imagem" style="height: 250px; background-image: url('https://placehold.co/600x400/B87A5E/FBF8F3?text=O+Documentário')"></div>
+                    <h3 class="card-titulo" style="font-size: 24px; margin-top: 10px;">A História da Família Silva</h3>
+                    <p class="card-descricao">O documentário cinematográfico completo com depoimentos de 3 gerações.</p>
+                </a>
+            </div>
+        </section>
+        
+        <section class="trilho-memorias">
+            <h2 class="titulo-trilho">Novas Memórias</h2>
+            <div class="carrossel esconder-scroll">
+                <a href="pages/memoria.html" class="card-memoria">
+                    <div class="card-imagem" style="background-image: url('https://placehold.co/600x400/A89B93/3D3A3A?text=Praia')"></div>
+                    <h3 class="card-titulo">Férias em Cabo Frio</h3>
+                    <p class="card-descricao">A primeira vez que levamos algm asdaa.</p>
+                </a>
+                
+                <a href="pages/memoria.html" class="card-memoria">
+                    <div class="card-imagem" style="background-image: url('https://placehold.co/600x400/D1CFCB/3D3A3A?text=Receita')"></div>
+                    <h3 class="card-titulo">Bolo de Fubá</h3>
+                    <p class="card-descricao">A receita original da vovó.</p>
+                </a>
+
+                <a href="pages/memoria.html" class="card-memoria">
+                    <div class="card-imagem" style="background-image: url('https://placehold.co/600x400/A89B93/3D3A3A?text=Formatura')"></div>
+                    <h3 class="card-titulo">Formatura do Pai</h3>
+                    <p class="card-descricao">Um dos dias mais felizes na La Salle.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal-memoria" class="modal-overlay" onclick="fecharModal(event)">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 class="modal-titulo" id="titulo-modal">Guardar uma Memória</h2>
+                <button class="btn-fechar" onclick="fecharModalBtn()">&times;</button>
+            </div>
+
+            <form>
+                <div class="form-row">
+                    <div class="form-grupo">
+                        <label class="form-label">Título</label>
+                        <input type="text" class="form-input" placeholder="Ex: Natal de 1995...">
+                    </div>
+                    <div class="form-grupo">
+                        <label class="form-label">Data / Ano</label>
+                        <input type="text" class="form-input" placeholder="Ex: 1998">
+                    </div>
+                </div>
+
+                <div class="form-grupo">
+                    <label class="form-label">O que você quer guardar?</label>
+                    <select id="seletor-tipo" class="form-select" style="width: 100%; padding: 14px; border: 1px solid #EAE8E4; border-radius: 8px; background-color: #F9F8F6;" onchange="mudarFormulario()">
+                        <option value="foto">📸 Uma Foto ou Vídeo</option>
+                        <option value="historia">📝 Apenas uma História</option>
+                        <option value="receita">🍪 Uma Receita de Família</option>
+                    </select>
+                </div>
+
+                <div id="campo-ingredientes" class="form-grupo campo-escondido">
+                    <label class="form-label">Ingredientes</label>
+                    <textarea class="form-input input-ingredientes" rows="4" placeholder="- 2 xícaras de farinha&#10;- 3 ovos"></textarea>
+                </div>
+
+                <div class="form-grupo">
+                    <label class="form-label" id="label-texto-principal">A História</label>
+                    <textarea id="input-texto-principal" class="form-input" rows="4" placeholder="Conte os detalhes"></textarea>
+                </div>
+
+                <div class="form-grupo">
+                    <label class="form-label">Quem participa?</label>
+                    <input type="text" class="form-input" placeholder="Marcar pessoas (Ex: vovó tal)">
+                </div>
+
+                <div class="form-grupo" id="campo-upload">
+                    <label class="form-label">Mídia</label>
+                    <div class="upload-box">
+                        <span style="font-size: 24px; display: block; margin-bottom: 5px;">📂</span>
+                        <span class="upload-texto">Carregar arquivo</span>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancelar" onclick="fecharModalBtn()">Cancelar</button>
+                    <button type="button" class="botao-primario btn-salvar">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function abrirModal() { document.getElementById('modal-memoria').style.display = 'flex'; }
+        function fecharModalBtn() { document.getElementById('modal-memoria').style.display = 'none'; }
+        function fecharModal(event) { if (event.target.id === 'modal-memoria') fecharModalBtn(); }
+
+        function mudarFormulario() {
+            const tipo = document.getElementById('seletor-tipo').value;
+            const campoIngredientes = document.getElementById('campo-ingredientes');
+            const labelPrincipal = document.getElementById('label-texto-principal');
+            const inputPrincipal = document.getElementById('input-texto-principal');
+            const tituloModal = document.getElementById('titulo-modal');
+
+            campoIngredientes.style.display = 'none';
+            labelPrincipal.innerText = "A História";
+            inputPrincipal.placeholder = "conte os detalhes desse momento";
+            tituloModal.innerText = "Guardar uma Memória";
+
+            if (tipo === 'receita') {
+                tituloModal.innerText = "Guardar Receita";
+                campoIngredientes.style.display = 'block';
+                labelPrincipal.innerText = "Modo de Preparo";
+                inputPrincipal.placeholder = "misture tudo blablabla";
+            } 
+            else if (tipo === 'historia') {
+                tituloModal.innerText = "Contar História";
+                inputPrincipal.rows = 8;
+            }
+            else {
+                inputPrincipal.rows = 4;
+            }
+        }
+    </script>
+
+</body>
+</html>
